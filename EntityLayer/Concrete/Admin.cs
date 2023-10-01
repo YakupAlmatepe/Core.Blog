@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class Admin
     {
         [Key]
-        public int AdminID { get; set; }
+        public string AdminID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
@@ -19,5 +19,4 @@ namespace EntityLayer.Concrete
         public string Role { get; set; }
     }
 }
-    }
-}
+

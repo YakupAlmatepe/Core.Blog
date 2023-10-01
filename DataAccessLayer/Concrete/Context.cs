@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -11,7 +14,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-D0HPTG1\\SQLEXPRESS;database=DbCoreBlog; integrated security=true;");
+            optionsBuilder.UseSqlServer("server=DESKTOP-QO8PCJ5;database=DbCoreBlog; integrated security=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

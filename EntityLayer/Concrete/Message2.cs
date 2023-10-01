@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class Message2
     {
         [Key]
-        public int MessageID { get; set; }
+        public string MessageID { get; set; }
         public int? SenderID { get; set; }
         public int? ReceiverID { get; set; }
         public string Subject { get; set; }

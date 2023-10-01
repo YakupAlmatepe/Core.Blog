@@ -8,37 +8,37 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CategoryManager : ICategoryService
-    {
-        ICategoryDal _categoryDal;
+    //public class CategoryManager : ICategoryService
+    //{
+    //    ICategoryDal _categoryDal;
 
-        public CategoryManager(ICategoryDal categoryDal)
-        {
-            _categoryDal = categoryDal;
-        }
-        public List<Category> GetAllTs()
-        {
-            return _categoryDal.GetList();
-        }
+    //    public CategoryManager(ICategoryDal categoryDal)
+    //    {
+    //        _categoryDal = categoryDal;
+    //    }
+    //    public List<Category> GetAllTs()
+    //    {
+    //        return _categoryDal.GetList();
+    //    }
 
-        public Category GetTById(int id)
-        {
-            return _categoryDal.GetByID(id);
-        }
+    //    public Category GetTById(int id)
+    //    {
+    //        return _categoryDal.GetByID(id);
+    //    }
 
-        public void TAdd(Category t)
-        {
-            _categoryDal.Insert(t);
-        }
+    //    public void TAdd(Category t)
+    //    {
+    //        _categoryDal.Insert(t);
+    //    }
 
-        public void TDelete(Category t)
-        {
-            _categoryDal.Delete(t);
-        }
+    //    public void TDelete(Category t)
+    //    {
+    //        _categoryDal.Delete(t);
+    //    }
 
-        public void TUpdate(Category t)
-        {
-            _categoryDal.Update(t);
-        }
-    }
+    //    public void TUpdate(Category t)
+    //    {
+    //        _categoryDal.Update(t);
+    //    }
+    //}
 }

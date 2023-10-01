@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,9 @@ namespace BusinessLayer.Concrete
 
         public List<Writer> GetWriterByID(int id)
         {
-            return _writerDal.GetListLinq(x => x.WriterID == id);
+            // return _writerDal.GetListLinq(x => x.WriterID== id);
+
+            return _writerDal.GetListLinq(x=>x.WriterStatus);//bunu değiştireceğim 
         }
 
         public void TAdd(Writer t)

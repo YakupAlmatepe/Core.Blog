@@ -102,7 +102,7 @@ namespace UI.Web
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
+           // app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

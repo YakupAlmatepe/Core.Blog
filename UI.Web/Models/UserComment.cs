@@ -1,8 +1,8 @@
 ﻿namespace UI.Web.Models
 {
-    public class BlogModel
+    public class UserComment
     {
         public int ID { get; set; }
-        public string BlogName { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -12,11 +12,12 @@ namespace UI.Web.Areas.Admin.Controllers
         CommentManager commentManager = new CommentManager(new EFCommentDal());
 
         [HttpGet]
-        //public IActionResult Index(int page = 1)
-        //{
-        //    var values = commentManager.GetTCommentsIncluded().ToPagedList(page, 20);
-        //    return View(values);
-        //}
+        public IActionResult Index(int page = 1)
+        {
+            //var values = commentManager.GetTCommentsIncluded().ToPagedList(page, 20);
+            //return View(values);
+            return View();//18. satır olmalı
+        }
 
         [HttpPost]
         public IActionResult DeleteComment(int id)

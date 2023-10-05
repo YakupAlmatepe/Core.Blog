@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace UI.Web.Areas.Admin.Controllers
 {
@@ -37,25 +38,25 @@ namespace UI.Web.Areas.Admin.Controllers
             ViewBag.Date = values.MessageDate;
             return View(values);
         }
-        //public async Task<List<AppUser>> GetUsersAsync()
-        //{
-        //    using (var context = new Context())
-        //    {
-        //        return await context.Users.ToListAsync();
-        //    }
-        //}
+        public async Task<List<AppUser>> GetUsersAsync()
+        {
+            using (var context = new Context())
+            {
+                return await context.Users.ToListAsync();
+            }
+        }
         [HttpGet]
-        //public async Task<IActionResult> NewMessage()
-        //{
-        //    List<SelectListItem> recieverUsers = (from x in await GetUsersAsync()
-        //                                          select new SelectListItem
-        //                                          {
-        //                                              Text = x.Email.ToString(),
-        //                                              Value = x.Id.ToString()
-        //                                          }).ToList();
-        //    ViewBag.RecieverUser = recieverUsers;
-        //    return View();
-        //}
+        public async Task<IActionResult> NewMessage()
+        {
+            List<SelectListItem> recieverUsers = (from x in await GetUsersAsync()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.Email.ToString(),
+                                                      Value = x.Id.ToString()
+                                                  }).ToList();
+            ViewBag.RecieverUser = recieverUsers;
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> NewMessage(Message2 message)
         {

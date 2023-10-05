@@ -12,12 +12,13 @@ namespace UI.Web.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EFCategoryDal());
-        //public IActionResult Index(int page = 1)
-        //{
+        public IActionResult Index(int page = 1)
+        {
 
-        //    var values = cm.GetAllTs().ToPagedList(page, 3);
-        //    return View(values);
-        //}
+          //  var values = cm.GetAllTs().ToPagedList(page,3);
+          var values = cm.GetAllTs().ToList();
+            return View(values);
+        }
         [HttpGet]
         public IActionResult AddCategory()
         {

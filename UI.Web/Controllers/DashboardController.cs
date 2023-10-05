@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace UI.Web.Controllers
 {
 
-    [AllowAnonymous]
+   // [AllowAnonymous]
     public class DashboardController : Controller
     {
         BlogManager bm = new BlogManager(new EFBlogDal());

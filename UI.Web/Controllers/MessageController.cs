@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace UI.Web.Controllers
 {
 
-    [Authorize]
+   // [Authorize]
     public class MessageController : Controller
     {
         Message2Manager mm = new Message2Manager(new EFMessage2Dal());

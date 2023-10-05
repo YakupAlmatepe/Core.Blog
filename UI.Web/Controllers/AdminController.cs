@@ -5,7 +5,7 @@ namespace UI.Web.Controllers
 {
     public class AdminController : Controller
     {
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public IActionResult Index()
         {
             return View();

@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
+using System.Runtime.Intrinsics.X86;
 
 namespace UI.Web.Controllers
 {
@@ -58,54 +60,57 @@ namespace UI.Web.Controllers
             return View();
         }
         [HttpPost]
-        //public async Task<IActionResult> BlogAdd(Blog blog)
-        //{
-        //    BlogValidator wv = new BlogValidator();
-        //    ValidationResult validationResult = new ValidationResult();
-        //    validationResult = wv.Validate(blog);
-        //    if (validationResult.IsValid)
-        //    {
-        //        blog.BlogStatus = true;
-        //        blog.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-        //        var userId = await _userManager.FindByNameAsync(User.Identity.Name);
-        //        blog.AppUserID = userId.Id;
-        //        bm.TAdd(blog);
-        //        return RedirectToAction("BlogListByWriter", "Blog");
-        //    }
-        //    else
-        //    {
-        //        foreach (var item in validationResult.Errors)
-        //        {
-        //            ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-        //        }
-        //        return View();
-        //    }
-        //}
-        public IActionResult BlogDelete(int id)
+        public async Task<IActionResult> BlogAdd(Blog blog)
         {
-            var values = bm.GetTById(id);
-            bm.TDelete(values);
-            return RedirectToAction("BlogListByWriter", "Blog");
+            //BlogValidator wv = new BlogValidator();
+            //ValidationResult validationResult = new ValidationResult();
+            //validationResult = wv.Validate(blog);
+            //if (validationResult.IsValid)
+            //{
+            //    blog.BlogStatus = true;
+            //    blog.BlogDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            //    var userId = await _userManager.FindByNameAsync(User.Identity.Name);
+            //    blog.AppUserID = userId.Id;
+            //    bm.TAdd(blog);
+            //    return RedirectToAction("BlogListByWriter", "Blog");
+            //}
+            //else
+            //{
+            //    foreach (var item in validationResult.Errors)
+            //    {
+            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+            //    }
+                return View();
+            }
         }
-        [HttpGet]
-        public IActionResult BlogUpdate(int id)
-        {
-            CategoryManager cm = new CategoryManager(new EFCategoryDal());
-            List<SelectListItem> categories = (from x in cm.GetAllTs()
-                                               select new SelectListItem
-                                               {
-                                                   Text = x.CategoryName,
-                                                   Value = x.CategoryID.ToString()
-                                               }).ToList();
-            ViewBag.cv = categories;
-            var blogvalue = bm.GetTById(id);
-            return View(blogvalue);
-        }
-        [HttpPost]
-        public IActionResult BlogUpdate(Blog blog)
-        {
-            bm.TUpdate(blog);
-            return RedirectToAction("BlogListByWriter", "Blog");
-        }
-    }
+    //public IActionResult BlogDelete(int id)
+    //{
+    //    var values = bm.GetTById(id);
+    //    bm.TDelete(values);
+    //    return RedirectToAction("BlogListByWriter", "Blog");
+    //}
+    //[HttpGet]
+    //public IActionResult BlogUpdate(int id)
+    //{
+    //    CategoryManager cm = new CategoryManager(new EFCategoryDal());
+    //    List<SelectListItem> categories = (from x in cm.GetAllTs()
+    //                                       select new SelectListItem
+    //                                       {
+    //                                           Text = x.CategoryName,
+    //                                           Value = x.CategoryID.ToString()
+    //                                       }).ToList();
+    //    ViewBag.cv = categories;
+    //    var blogvalue = bm.GetTById(id);
+    //    return View(blogvalue);
+    //}
+    //[HttpPost]
+    //public IActionResult BlogUpdate(Blog blog)
+    //{
+    //    BlogManager bm = new BlogManager(new EFBlogDal());
+    //    bm.TUpdate(blog);
+    //    //  return RedirectToAction("BlogListByWriter", "Blog");
+    //    return ("C");
+
+    //}
+    // }
 }

@@ -5,7 +5,7 @@ namespace UI.Web.Controllers
 {
     public class _AdminsLayout : Controller
     {
-        [AllowAnonymous]
+     //   [AllowAnonymous]
         public IActionResult AdminsLayout()
         {
             return View();

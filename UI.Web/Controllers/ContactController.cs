@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Web.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class ContactController : Controller
     {
         ContactManager cm = new ContactManager(new EFContactDal());

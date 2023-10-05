@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Web.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class RegisterController : Controller
     {
         WriterManager wm = new WriterManager(new EFWriterDal());

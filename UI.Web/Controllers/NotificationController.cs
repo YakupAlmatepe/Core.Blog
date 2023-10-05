@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Web.Controllers
 {
-    [AllowAnonymous]
+   // [AllowAnonymous]
     public class NotificationController : Controller
     {
         NotificationManager nm = new NotificationManager(new EFNotificationDal());

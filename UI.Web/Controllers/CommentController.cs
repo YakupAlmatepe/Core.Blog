@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Web.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class CommentController : Controller
     {
         CommentManager cm = new CommentManager(new EFCommentDal());

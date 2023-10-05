@@ -9,7 +9,7 @@
 <br />
 @using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
 {
-    @* @Html.Label("Blog Başlığı")
+    @Html.Label("Blog Başlığı")
     @Html.TextBoxFor(x=>x.BlogTitle, new{@class="form-control"})
     @Html.ValidationMessageFor(x=>x.BlogTitle)
     <br />
@@ -30,6 +30,6 @@
     @Html.ValidationMessageFor(x=>x.BlogContent)
     <br />
     <button class="btn btn-dark">Blog Oluştur</button>
-    <br /> *@
+    <br />
 }
 

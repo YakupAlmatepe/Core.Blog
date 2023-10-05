@@ -71,17 +71,17 @@ namespace UI.Web
             .AddEntityFrameworkStores<Context>();
 
             builder.Services.AddControllersWithViews();
-            //builder.Services.AddMvc(config =>
-            //{
-            //    var policy = new Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder()
-            //        .RequireAuthenticatedUser().Build();
-            //    config.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter(policy));
-            //});
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser().Build();
+                config.Filters.Add(new Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter(policy));
+            });
 
-            //builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
-            //{
-            //    options.LoginPath = "/Login/Index/";
-            //});
+            builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.LoginPath = "/Login/Index/";
+            });
 
             builder.Services.AddSession();
             builder.Services.ConfigureApplicationCookie(options =>
@@ -95,14 +95,14 @@ namespace UI.Web
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            //if (!app.Environment.IsDevelopment())
-            //{
-            //    app.UseExceptionHandler("/Home/Error");
-            //    app.UseHsts();
-            //}
+           // Configure the HTTP request pipeline.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
 
-           // app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

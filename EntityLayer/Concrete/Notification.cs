@@ -11,15 +11,11 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public string NotificationID { get; set; }
-
         public string NotificationType { get; set; }
         public string NotificationSymbol { get; set; }
-
         public string NotificationDetails { get; set; }
         public string NotificationColor { get; set; }
-
         public bool NotificationStatus { get; set; }
-
         public DateTime NotificationDate { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using UI.Web.Areas.Admin.Models;
 using UI.Web.Models;
 
 namespace UI.Web.Areas.Admin.Controllers

@@ -2,12 +2,13 @@
 using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using UI.Web.Areas.Admin.Models;
 using UI.Web.Models;
 
 namespace UI.Web.Areas.Admin.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = "Admin")]
+    [Area("Admin")]
+   // [Authorize(Roles = "Admin")]
 
     public class BlogController : Controller
     {
@@ -77,8 +78,7 @@ namespace UI.Web.Areas.Admin.Controllers
             {
                 bm = c.Blogs.Select(x => new BlogModel2
                 {
-                    //ID = x.BlogID,
-                   // ID = x.BlogID,
+                   //ID = x.BlogID,
                     BName = x.BlogTitle
                 }).ToList();
             }
